@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class Movie {
   private int id;
   private String productName;
-  private int imageUrl;
+  private String imageUrl;
   private String genre;
 }
