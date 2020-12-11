@@ -3,8 +3,9 @@ package ru.netology.manager;
 import ru.netology.domain.Movie;
 
 public class MovieManager {
+
   private int numOfMoviesToShow = 10;
-  private Movie[] movies = new Movie[0];
+  private Movie[] items = new Movie[0];
 
   public MovieManager() {
   }
@@ -14,30 +15,30 @@ public class MovieManager {
   }
 
   public void add(Movie item) {
-    int length = movies.length + 1;
+    int length = items.length + 1;
     Movie[] tmp = new Movie[length];
-    System.arraycopy(movies, 0, tmp, 0, movies.length);
+    System.arraycopy(items, 0, tmp, 0, items.length);
     int lastIndex = tmp.length - 1;
     tmp[lastIndex] = item;
-    movies = tmp;
+    items = tmp;
 
   }
 
   public Movie[] getAll() {
-    Movie[] result = new Movie[movies.length];
+    Movie[] result = new Movie[items.length];
     for (int i = 0; i < result.length; i++) {
-      int index = movies.length - i - 1;
-      result[i] = movies[index];
+      int index = items.length - i - 1;
+      result[i] = items[index];
     }
     return result;
   }
 
   public Movie[] getMovies() {
-    int numToShow = Math.min(movies.length, numOfMoviesToShow);
+    int numToShow = Math.min(items.length, numOfMoviesToShow);
     Movie[] result = new Movie[numToShow];
     for (int i = 0; i < result.length; i++) {
       int index = numToShow - i - 1;
-      result[i] = movies[index];
+      result[i] = items[index];
     }
     return result;
   }
